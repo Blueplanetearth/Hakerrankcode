@@ -1,0 +1,45 @@
+    static void reversePrint(SinglyLinkedListNode head) {
+        
+     SinglyLinkedListNode mylist = null;
+     SinglyLinkedListNode top = null;
+     int count =0;
+     
+    // System.out.println("top "+top.next);
+     
+     while(head!=null)
+     {
+         if(count==0)
+         {
+             SinglyLinkedListNode newnode = new SinglyLinkedListNode(head.data);
+             mylist = newnode;
+             top =newnode;
+             head = head.next;
+            // System.out.println(top.data +" "+top.next);
+             //System.out.println("topadd "+ top);
+             count++;
+         }
+         else
+         {
+           SinglyLinkedListNode newnode = new SinglyLinkedListNode(head.data);
+          // System.out.println("NewNode "+newnode.data + " "+ newnode.next);
+           
+           mylist = newnode;
+           
+           newnode.next = top;
+           top = mylist;
+           head = head.next;
+        //    System.out.println("Mylist "+mylist.data + " "+ mylist.next);
+        //    System.out.println("Mylistadd "+mylist);
+         }
+         
+     }
+     
+    //  System.out.println("Mylist "+ mylist.next);
+    //  System.out.println("mylistadd" + mylist);
+     while(mylist!=null)
+     {
+     System.out.println(mylist.data);   
+     mylist = mylist.next;
+     }
+
+    }
