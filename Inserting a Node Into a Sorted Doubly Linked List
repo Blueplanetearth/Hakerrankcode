@@ -1,0 +1,42 @@
+   static DoublyLinkedListNode sortedInsert(DoublyLinkedListNode head, int data) {
+
+       DoublyLinkedListNode first = head;
+       DoublyLinkedListNode second = head.next;
+       DoublyLinkedListNode newnode = new DoublyLinkedListNode(data);
+       
+       if(newnode.data<head.data)
+       {
+           head = newnode;
+           head.next = first;
+           first.prev = head;
+           return head;
+       }
+     
+       while(second!=null)
+       {
+         if(first.data<newnode.data && second.data>=newnode.data)
+         {
+          first.next = newnode;
+          newnode.prev = first;
+          newnode.next = second;
+          second.prev = newnode;
+          break;   
+         }
+         else
+         {
+            first = first.next;
+            second = second.next;
+         }
+         
+       }
+       
+       
+       if(newnode.data>first.data)
+       {
+           first.next = newnode;
+           newnode.prev = first;
+       }
+       
+       return head;
+     
+    }
