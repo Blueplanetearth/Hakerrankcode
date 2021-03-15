@@ -1,0 +1,41 @@
+static SinglyLinkedListNode reverse(SinglyLinkedListNode head) {
+        
+        SinglyLinkedListNode top = head;
+        SinglyLinkedListNode curr = head;
+        
+        int count =0;
+        
+        while(curr.next!=null)
+        {
+            curr = curr.next;
+            
+            if(count == 0)
+            {
+                head.next = null;
+                top = curr;
+                count++;    
+            }
+            else
+            {
+                top.next = head;
+                head = top;
+                top = curr;
+            }
+           
+        //   System.out.println("Curr "+curr); 
+        //   System.out.println("head " +head);
+        //   System.out.println("top "+top);     
+            
+        }
+        
+        if(curr.next==null)
+        curr.next = head;
+        
+        // System.out.println(head);
+        // System.out.println(top);
+        //  System.out.println(curr);
+        
+        return curr;
+
+
+    }
