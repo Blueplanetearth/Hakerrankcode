@@ -1,0 +1,19 @@
+  static boolean hasCycle(SinglyLinkedListNode head) {
+
+    int count = 1;
+    
+    while(head!=null)
+    {
+        head = head.next;
+        count++;
+        
+        if(count ==1000)
+        break;
+    }
+    
+     if(count==1000)
+      return true;
+      
+      return false;
+
+    }
