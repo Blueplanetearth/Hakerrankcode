@@ -1,0 +1,26 @@
+   public static int mytree(Node root,int height)
+    {
+        int leftheight = height;
+        int rightheight = height;
+        
+        if(root.left!=null)
+         leftheight = mytree(root.left,++leftheight);
+        
+        if(root.right!=null)
+         rightheight = mytree(root.right,++rightheight);
+         
+        if(leftheight>=rightheight)
+          return leftheight;
+        else
+          return rightheight;    
+        
+    }
+    
+    
+	public static int height(Node root) {
+      	// Write your code here.
+          
+          int height = mytree(root,0);
+          
+          return height;
+    }
