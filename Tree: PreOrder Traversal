@@ -1,0 +1,20 @@
+    public static boolean tree(Node root)
+    {
+        System.out.print(root.data+" ");
+        
+        if(root.left!=null)
+         tree(root.left);
+        
+        if(root.right!=null)
+         tree(root.right);
+        
+        
+        return false;  
+         
+    }
+
+    public static void preOrder(Node root) {
+        
+       boolean a = tree(root);
+
+    }
