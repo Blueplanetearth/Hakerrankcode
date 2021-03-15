@@ -1,0 +1,26 @@
+    static int getNode(SinglyLinkedListNode head, int positionFromTail) {
+
+     int count =0,i=0;
+     
+     SinglyLinkedListNode top = head;
+     
+     while(top!=null)
+     {
+         top = top.next;
+         count++;
+     }
+     
+     int pos = count - 1 - positionFromTail;
+     
+     while(head!=null)
+     {
+        if(i==pos)
+         return head.data;
+         
+         head = head.next;
+         i++;
+     }
+     
+     return -1;
+     
+    }
