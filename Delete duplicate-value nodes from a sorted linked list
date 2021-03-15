@@ -1,0 +1,23 @@
+   static SinglyLinkedListNode removeDuplicates(SinglyLinkedListNode head) {
+
+     SinglyLinkedListNode top1 = head.next;
+     SinglyLinkedListNode top = head;
+     
+     while(top1!=null)
+     {
+         if(top.data == top1.data)
+         {
+             top.next = top1.next;
+             top1 = top1.next;
+         }
+         else
+         {
+             top = top.next;
+             top1= top1.next;
+         }
+         
+     }
+     
+     return head;
+    
+    }
